@@ -2,7 +2,7 @@ import {
   CreateChargeInputProps,
   CreateChargeOutputProps,
   ICreateCharge,
-} from 'src/credit-card/domain/contracts/psp-service.interface';
+} from '../../../domain/contracts/psp-service.interface';
 
 export class Pagarme implements ICreateCharge {
   async createCharge({

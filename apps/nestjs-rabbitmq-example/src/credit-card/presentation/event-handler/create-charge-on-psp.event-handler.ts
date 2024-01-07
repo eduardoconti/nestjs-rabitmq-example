@@ -1,10 +1,10 @@
 import { Controller, Inject } from '@nestjs/common';
 import { Ctx, EventPattern, Payload, RmqContext } from '@nestjs/microservices';
+import { Pagarme } from '../../infra/psp/pagarme/pagarme.service';
 import {
   CreateChargeInputProps,
   ICreateCharge,
-} from 'src/credit-card/domain/contracts/psp-service.interface';
-import { Pagarme } from 'src/credit-card/infra/psp/pagarme/pagarme.service';
+} from '../../domain/contracts/psp-service.interface';
 
 @Controller()
 export class CreateChargeOnPSPEventHandler {

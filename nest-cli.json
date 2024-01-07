@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/nestjs-rabbitmq-example/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-rabbitmq-example/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nestjs-rabbitmq-example",
+  "projects": {
+    "nestjs-rabbitmq-example": {
+      "type": "application",
+      "root": "apps/nestjs-rabbitmq-example",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-rabbitmq-example/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs-rabbitmq-example/tsconfig.app.json"
+      }
+    },
+    "credit-card-consumer": {
+      "type": "application",
+      "root": "apps/credit-card-consumer",
+      "entryFile": "main",
+      "sourceRoot": "apps/credit-card-consumer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/credit-card-consumer/tsconfig.app.json"
+      }
+    }
   }
 }

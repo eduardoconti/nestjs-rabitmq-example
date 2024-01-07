@@ -1,7 +1,7 @@
 import { Body, Controller, Inject, Post } from '@nestjs/common';
-import { CreateChargeUseCase } from 'src/credit-card/app/use-cases/create-charge.use-case';
-import { CreateChargeInputProps } from 'src/credit-card/domain/contracts/psp-service.interface';
-import { ICreateChargeUseCase } from 'src/credit-card/domain/use-cases/create-charge.use-case';
+import { CreateChargeUseCase } from '../../app/use-cases/create-charge.use-case';
+import { ICreateChargeUseCase } from '../../domain/use-cases/create-charge.use-case';
+import { CreateChargeInputProps } from '../../domain/contracts/psp-service.interface';
 
 @Controller('charge')
 export class CreateChargeController {
