@@ -14,6 +14,8 @@ services:
     command: yarn start:api:dev
     depends_on:
       - rabbitmq
+    cpus: 0.1
+    mem_limit: 256M
 
   consumer:
     restart: on-failure
@@ -28,6 +30,8 @@ services:
     deploy:
       mode: replicated
       replicas: 3
+    cpus: 0.1
+    mem_limit: 256M
     
   rabbitmq:
     image: rabbitmq:3.9-management
@@ -38,7 +42,9 @@ services:
       - 5672:5672  
       - 15672:15672  
     volumes:
-      - rabbitmq_data:/var/lib/rabbitmq  
+      - rabbitmq_data:/var/lib/rabbitmq
+    cpus: 0.1
+    mem_limit: 256M  
 
 volumes:
   rabbitmq_data:
