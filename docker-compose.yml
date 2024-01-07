@@ -6,13 +6,28 @@ services:
     restart: on-failure
     build:
       context: .
+      dockerfile: ./apps/nestjs-rabbitmq-example/Dockerfile
     volumes:
       - .:/usr/src/app
     ports:
       - 3000:3000
-    command: yarn start:dev
+    command: yarn start:api:dev
     depends_on:
       - rabbitmq
+
+  consumer:
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: ./apps/credit-card-consumer/Dockerfile
+    volumes:
+      - .:/usr/src/app
+    command: yarn start:consumer:dev
+    depends_on:
+      - rabbitmq
+    deploy:
+      mode: replicated
+      replicas: 3
     
   rabbitmq:
     image: rabbitmq:3.9-management
