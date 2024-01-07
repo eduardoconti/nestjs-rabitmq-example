@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { CreditCardModule } from './credit-card/credit-card.module';
+import { CreditCardApiModule } from './credit-card/credit-card.module';
 
 @Module({
-  imports: [CreditCardModule],
+  imports: [CreditCardApiModule],
   controllers: [],
   providers: [],
 })

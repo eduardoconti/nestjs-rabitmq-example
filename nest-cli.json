@@ -27,6 +27,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/credit-card-consumer/tsconfig.app.json"
       }
+    },
+    "credit-card": {
+      "type": "library",
+      "root": "libs/credit-card",
+      "entryFile": "index",
+      "sourceRoot": "libs/credit-card/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/credit-card/tsconfig.lib.json"
+      }
     }
   }
 }
