@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { Pagarme } from './infra/psp/pagarme/pagarme.service';
 import { CreateChargeUseCase } from './app/use-cases/create-charge.use-case';
 import { CreateChargeController } from './presentation/controllers/create-charge.controller';
-import { CreateChargeOnPSPEventHandler } from './presentation/event-handler/create-charge-on-psp.event-handler';
 import {
   CreateChargePublisher,
   IPublisherCreateCharge,
@@ -70,6 +69,6 @@ import {
       },
     },
   ],
-  controllers: [CreateChargeController, CreateChargeOnPSPEventHandler],
+  controllers: [CreateChargeController],
 })
 export class CreditCardModule {}
