@@ -7,7 +7,7 @@ import { ICreateChargeUseCase } from 'src/credit-card/domain/use-cases/create-ch
 import { IPublisherCreateCharge } from 'src/credit-card/infra/rmq/publisher/create-charge.publisher';
 
 export class CreateChargeUseCase implements ICreateChargeUseCase {
-  constructor(private readonly pspService: IPublisherCreateCharge) {}
+  constructor(private readonly publisher: IPublisherCreateCharge) {}
 
   async execute(
     props: CreateChargeInputProps,
@@ -15,7 +15,7 @@ export class CreateChargeUseCase implements ICreateChargeUseCase {
     const entity = CreditCardChargeEntity.newCharge(props);
     console.log(entity);
     await new Promise((resolve) => setTimeout(resolve, 100)); //simulate database access
-    await this.pspService.publish(props);
+    await this.publisher.publish(props);
     return { ...props, status: 'PENDING' };
   }
 }

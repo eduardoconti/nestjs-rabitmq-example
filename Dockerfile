@@ -8,5 +8,5 @@ COPY . .
 
 RUN yarn build
 
-EXPOSE ${PORT}
+EXPOSE 3000
 CMD [ "yarn", "start:prod" ]
