@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  credit-card-api:
+    container_name: credit-card-api
+    restart: on-failure
+    build:
+      context: .
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    command: yarn start:dev
+    depends_on:
+      - rabbitmq
+    
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    container_name: rabbitmq
+    restart: always
+    hostname: rabbitmq
+    ports:
+      - 5672:5672  
+      - 15672:15672  
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq  
+
+volumes:
+  rabbitmq_data:
