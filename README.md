@@ -24,25 +24,14 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Credit card payment application using NestJS and RabbitMQ to handle charge generation with a Payment Service Provider (PSP).
 
-## Installation
-
-```bash
-$ yarn install
-```
 
 ## Running the app
 
 ```bash
-# development
-$ yarn run start
+$ docker-compose up --build 
 
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
 ```
 
 ## Test
