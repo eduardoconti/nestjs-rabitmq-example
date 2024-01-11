@@ -20,6 +20,9 @@
     "paths": {
       "@libs/credit-card/*": [
         "libs/credit-card/src/*"
+      ],
+      "@api/*": [
+        "apps/nestjs-rabbitmq-example/src/*"
       ]
     }
   }

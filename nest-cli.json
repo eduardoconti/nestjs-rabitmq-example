@@ -4,7 +4,7 @@
   "sourceRoot": "apps/nestjs-rabbitmq-example/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": true,
+    "webpack": false,
     "tsConfigPath": "apps/nestjs-rabbitmq-example/tsconfig.app.json"
   },
   "monorepo": true,
